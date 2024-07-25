@@ -1,0 +1,412 @@
+@import "normalize";
+
+@import "settings";
+
+@import "library_swiper-bundle";
+
+.header {
+  border-bottom: 1px solid rgba(228, 228, 228, 1);
+
+  &__container {
+    align-items: center;
+    justify-content: space-between;
+    padding: min(1.3vw, 16px) min(3.0vw, 38px) min(1.0vw, 13px) min(2.5vw, 32px);
+  }
+
+  &__logoBlock {
+    width: 9.1rem;
+    height: 3.2rem;
+
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__tel {
+    position: relative;
+    align-items: center;
+    padding-left: 3.2rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 2.4rem;
+    color: rgba(208, 188, 122, 1);
+    letter-spacing: .04em;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 3.2rem;
+      height: 3.2rem;
+      background-image: url(../img/header__tel.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  &__main {
+    align-items: center;
+
+    column-gap: min(2.5vw, 32px);
+  }
+
+  &__contactBlock {
+    align-items: center;
+
+    column-gap: min(3.1vw, 40px);
+  }
+
+  &__btnBlock {
+    align-items: center;
+  }
+
+  &__btnLike {
+    transition: stroke .3s ease-in-out;
+
+    stroke: #d0bc7a;
+  }
+
+  &__btnAcc {
+    transition: fill .3s ease-in-out;
+
+    fill: #d0bc7a;
+  }
+}
+
+.burger {
+  position: relative;
+  width: 2rem;
+  height: .75rem;
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: .15rem;
+    background-color: black;
+  }
+
+  &::after {
+    top: 0;
+  }
+
+  &::before {
+    bottom: 0;
+  }
+}
+
+.profile {
+  &__container {
+    border-bottom: 1px solid rgba(235, 235, 235, 1);
+  }
+
+  &__menu {
+    flex-direction: column;
+    min-width: min(21.3vw, 272px);
+    padding-top: min(8.8vw, 112px);
+    padding-left: min(6.3vw, 80px);
+    border-right: 1px solid rgba(235, 235, 235, 1);
+
+    row-gap: min(.4vw, 5px);
+  }
+
+  &__menuBtn {
+    max-width: min(12.5vw, 160px);
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 2.4rem;
+    text-align: start;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+
+    &_active {
+      color: #d0bc7a;
+    }
+  }
+
+  &__main {
+    display: block;
+    width: 100%;
+
+    & h1 {
+      padding: min(8.8vw, 112px) min(7.4vw, 95px) min(6.3vw, 80px);
+      border-bottom: 1px solid rgba(235, 235, 235, 1);
+      font-size: 8rem;
+      font-weight: 400;
+      line-height: 8rem;
+      text-transform: uppercase;
+    }
+
+    & div:has(input) {
+      border-bottom: 1px solid rgba(235, 235, 235, 1);
+
+      padding-block: min(6.3vw, 80px);
+      padding-inline: min(7.4vw, 95px);
+
+      & span {
+        display: flex;
+        flex-direction: column;
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 2.4rem;
+        color: rgba(33, 36, 46, .4);
+
+        row-gap: min(1.1vw, 14px);
+
+        &:not(:last-child) {
+          margin-bottom: min(1.9vw, 24px);
+        }
+
+        & input {
+          width: min(42.5vw, 544px);
+          padding: min(1.2vw, 15px);
+          font-size: 1.6rem;
+          font-weight: 400;
+          line-height: 2.4rem;
+          color: rgba(33, 36, 46, 1);
+          background-color: rgba(247, 247, 247, 1);
+
+          &::placeholder {
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 2.4rem;
+            color: rgba(33, 36, 46, 1);
+          }
+        }
+      }
+
+      & h3 {
+        margin-bottom: min(3.8vw, 48px);
+        font-size: 2.4rem;
+        font-weight: 500;
+        line-height: 2.4rem;
+        color: rgba(33, 36, 46, 1);
+      }
+    }
+
+    & div:has(button) {
+      padding-block: min(6.3vw, 80px);
+      padding-inline: min(7.4vw, 95px);
+
+      & > button {
+        align-items: center;
+        justify-content: center;
+        padding: min(1.3vw, 16px) min(2.5vw, 32px);
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 2.4rem;
+        color: rgba(255, 255, 255, 1);
+        background-color: rgba(33, 36, 46, 1);
+      }
+    }
+  }
+}
+
+.trend {
+  &__container {
+    padding: min(8.8vw, 112px) 0 min(8.8vw, 112px) min(6.3vw, 80px);
+  }
+
+  &__mainBlock {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, max-content);
+    row-gap: min(3.8vw, 48px);
+  }
+
+  & h2 {
+    font-size: 4.8rem;
+    font-weight: 500;
+    line-height: 5.6rem;
+    color: rgba(33, 36, 46, 1);
+    text-transform: uppercase;
+
+    grid-column: 1/2;
+    grid-row: 1/2;
+
+    & span {
+      color: rgba(208, 188, 122, 1);
+    }
+  }
+
+  &__more {
+    position: relative;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: min(8.1vw, 104px);
+    font-family: Roboto;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 2.4rem;
+    color: rgba(33, 36, 46, 1);
+
+    grid-column: 2/3;
+    grid-row: 1/2;
+
+    & span {
+      transform: translateY(.7rem);
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: -2.5rem;
+        width: 1.6rem;
+        height: 1.6rem;
+        background-image: url(../img/more_arrow.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        transform: translateY(.4rem);
+      }
+    }
+  }
+
+  &__slider {
+    max-width: min(86.9vw, 1112px);
+  }
+
+  &__slide:nth-child(odd) {
+    background-color: rgba(192, 141, 116, 1);
+  }
+
+  &__slide:nth-child(even) {
+    background-color: rgba(234, 151, 111, 1);
+  }
+
+  &__slide {
+    border: 1px solid rgba(255, 255, 255, 1);
+    border-radius: min(.7vw, 9px);
+    cursor: pointer;
+    transition: border .3s ease-in-out;
+  }
+
+  &__mainSlider {
+    overflow: hidden;
+
+    grid-column: 1/3;
+    grid-row: 2/3;
+  }
+
+  &__slideImg {
+    position: relative;
+    width: 100%;
+    height: min(20.0vw, 256px);
+    margin-bottom: min(.9vw, 12px);
+    border-radius: min(.6vw, 8px) min(.6vw, 8px) 0 0;
+    background-color: rgba(247, 247, 247, 1);
+
+    & img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+    }
+  }
+
+  &__slideAdvant {
+    position: absolute;
+    top: min(1.9vw, 24px);
+    left: min(1.8vw, 23px);
+    padding: min(.3vw, 4px) min(.9vw, 12px);
+    border-radius: min(7.8vw, 100px);
+    font-size: min(1.1vw, 14px);
+    font-weight: 400;
+    line-height: min(1.4vw, 18px);
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(235, 87, 87, 1);
+  }
+
+  &__like {
+    position: absolute;
+    top: min(2.0vw, 26px);
+    right: min(1.9vw, 24px);
+    width: min(1.9vw, 24px);
+    height: min(1.9vw, 24px);
+
+    fill: #e4e4e4;
+
+    & svg {
+      width: 100%;
+      height: 100%;
+
+      fill: inherit;
+    }
+  }
+
+  &__descrBlock {
+    flex-direction: column;
+    justify-content: space-between;
+    padding: min(1.9vw, 24px);
+    border-radius: 0 0 min(.6vw, 8px) min(.6vw, 8px) ;
+    background-color: rgba(247, 247, 247, 1);
+
+    row-gap: min(1.3vw, 16px);
+
+    & div {
+      display: flex;
+      flex-direction: column;
+
+      row-gap: min(.6vw, 8px);
+    }
+
+    & h4 {
+      font-family: "TimesNewRoman";
+      font-size: min(1.4vw, 18px);
+      font-weight: 700;
+      font-style: italic;
+      line-height: min(1.4vw, 18px);
+      color: rgba(33, 36, 46, 1);
+    }
+  }
+
+  &__descr {
+    font-size: min(1.1vw, 14px);
+    font-weight: 400;
+    line-height: min(1.4vw, 18px);
+    color: rgba(33, 36, 46, 1);
+    text-align: left;
+  }
+
+  &__price {
+    font-family: "TimesNewRoman";
+    font-size: min(1.4vw, 18px);
+    font-weight: 700;
+    font-style: italic;
+    line-height: min(1.4vw, 18px);
+    color: rgba(33, 36, 46, 1);
+
+    column-gap: min(1.2vw, 15px);
+
+    & span {
+      color: rgba(33, 36, 46, .4);
+      text-decoration: line-through;
+    }
+  }
+}
+
+// hover 
+@media (any-hover: hover) {
+  .header__btnBlock button:hover .header__btnLike {
+    stroke: rgba(33, 36, 46, 1);
+  }
+
+  .header__btnBlock button:hover .header__btnAcc {
+    fill: rgba(33, 36, 46, 1);
+  }
+
+  .burger:hover {
+    height: 1.15rem;
+  }
+
+  .burger:hover::after,
+  .burger:hover::before {
+    background-color: #d0bc7a;
+  }
+
+  .trend__slide:hover {
+    border: 1px solid rgba(33, 36, 46, .4);
+  }
+}
