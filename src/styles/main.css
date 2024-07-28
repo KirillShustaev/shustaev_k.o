@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -1174,10 +1175,11 @@ button.swiper-pagination-bullet {
 .header__logoBlock {
   width: 9.1rem;
   height: 3.2rem;
-}
-.header__logoBlock img {
-  width: 100%;
-  height: 100%;
+  background-image: url(../img/logo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: background-image 0.3s ease-in-out;
 }
 .header__tel {
   position: relative;
@@ -1188,6 +1190,7 @@ button.swiper-pagination-bullet {
   line-height: 2.4rem;
   color: rgb(208, 188, 122);
   letter-spacing: 0.04em;
+  transition: color 0.3s ease-in-out;
 }
 .header__tel::after {
   content: "";
@@ -1199,6 +1202,7 @@ button.swiper-pagination-bullet {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  transition: background-image 0.3s ease-in-out;
 }
 .header__main {
   align-items: center;
@@ -1212,6 +1216,26 @@ button.swiper-pagination-bullet {
 }
 .header__btnBlock {
   align-items: center;
+}
+.header__btnBlock button[aria-label=Избранное] {
+  position: relative;
+}
+.header__btnBlock button[aria-label=Избранное] span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 100%;
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 0.8rem;
+  color: rgb(255, 255, 255);
+  letter-spacing: -0.08em;
+  background-color: rgb(33, 36, 46);
 }
 .header__btnLike {
   transition: stroke 0.3s ease-in-out;
@@ -1261,6 +1285,7 @@ button.swiper-pagination-bullet {
   text-align: start;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  transition: color 0.3s ease-in-out;
 }
 .profile__menuBtn_active {
   color: #d0bc7a;
@@ -1297,23 +1322,28 @@ button.swiper-pagination-bullet {
 .profile__main div:has(input) span input {
   width: min(42.5vw, 544px);
   padding: min(1.2vw, 15px);
+  border-radius: 0.4rem;
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 2.4rem;
   color: rgb(33, 36, 46);
   background-color: rgb(247, 247, 247);
+  transition: color 0.3s ease-in-out;
 }
 .profile__main div:has(input) span input::-moz-placeholder {
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 2.4rem;
-  color: rgb(33, 36, 46);
+  color: rgba(33, 36, 46, 0.4);
+  -moz-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
 }
 .profile__main div:has(input) span input::placeholder {
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 2.4rem;
-  color: rgb(33, 36, 46);
+  color: rgba(33, 36, 46, 0.4);
+  transition: color 0.3s ease-in-out;
 }
 .profile__main div:has(input) h3 {
   margin-bottom: min(3.8vw, 48px);
@@ -1335,6 +1365,7 @@ button.swiper-pagination-bullet {
   line-height: 2.4rem;
   color: rgb(255, 255, 255);
   background-color: rgb(33, 36, 46);
+  transition: background-color 0.3s ease-in-out;
 }
 
 .trend__container {
@@ -1362,15 +1393,17 @@ button.swiper-pagination-bullet {
   align-items: center;
   justify-content: flex-end;
   padding-right: min(8.1vw, 104px);
-  font-family: Roboto;
-  font-size: 1.6rem;
-  font-weight: 500;
-  line-height: 2.4rem;
-  color: rgb(33, 36, 46);
+  cursor: default;
   grid-column: 2/3;
   grid-row: 1/2;
 }
 .trend__more span {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 2.4rem;
+  color: rgb(33, 36, 46);
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
   transform: translateY(0.7rem);
 }
 .trend__more span::after {
@@ -1383,6 +1416,7 @@ button.swiper-pagination-bullet {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  transition: background-image 0.3s ease-in-out;
   transform: translateY(0.4rem);
 }
 .trend__slider {
@@ -1437,6 +1471,7 @@ button.swiper-pagination-bullet {
   right: min(1.9vw, 24px);
   width: min(1.9vw, 24px);
   height: min(1.9vw, 24px);
+  transition: fill 0.3s ease-in-out;
   fill: #e4e4e4;
 }
 .trend__like svg {
@@ -1464,6 +1499,7 @@ button.swiper-pagination-bullet {
   font-style: italic;
   line-height: min(1.4vw, 18px);
   color: rgb(33, 36, 46);
+  transition: color 0.3s ease-in-out;
 }
 .trend__descr {
   font-size: min(1.1vw, 14px);
@@ -1504,4 +1540,46 @@ button.swiper-pagination-bullet {
   .trend__slide:hover {
     border: 1px solid rgba(33, 36, 46, 0.4);
   }
+  .trend__slide:hover h4 {
+    color: rgb(208, 188, 122);
+  }
+  .header__logoBlock:hover {
+    background-image: url(../img/logo_hover.png);
+  }
+  .header__tel:hover {
+    color: rgb(33, 36, 46);
+  }
+  .header__tel:hover::after {
+    background-image: url(../img/header__tel_hover.svg);
+  }
+  .trend__more span:hover {
+    color: rgb(208, 188, 122);
+  }
+  .trend__more span:hover::after {
+    background-image: url(../img/more_arrow_hover.svg);
+  }
+  .trend__like:hover {
+    fill: rgba(33, 36, 46, 0.4);
+  }
+  .profile__main div:has(button) > button:hover {
+    background-color: rgb(208, 188, 122);
+  }
+  .profile__main div:has(input) span input:hover::-moz-placeholder {
+    color: rgb(33, 36, 46);
+  }
+  .profile__main div:has(input) span input:hover::placeholder {
+    color: rgb(33, 36, 46);
+  }
+}
+.trend__like:active {
+  fill: rgb(208, 188, 122);
+}
+
+.profile__main div:has(button) > button:active {
+  background-color: rgba(208, 188, 122, 0.5);
+}
+
+.profile__main div:has(input) span input:focus {
+  color: rgb(33, 36, 46);
+  outline: 1px solid rgb(0, 0, 0);
 }/*# sourceMappingURL=main.css.map */

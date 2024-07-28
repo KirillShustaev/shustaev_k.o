@@ -16,11 +16,11 @@
   &__logoBlock {
     width: 9.1rem;
     height: 3.2rem;
-
-    & img {
-      width: 100%;
-      height: 100%;
-    }
+    background-image: url(../img/logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: background-image .3s ease-in-out;
   }
 
   &__tel {
@@ -32,6 +32,7 @@
     line-height: 2.4rem;
     color: rgba(208, 188, 122, 1);
     letter-spacing: .04em;
+    transition: color .3s ease-in-out;
 
     &::after {
       content: "";
@@ -43,6 +44,7 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
+      transition: background-image .3s ease-in-out;
     }
   }
 
@@ -60,6 +62,28 @@
 
   &__btnBlock {
     align-items: center;
+
+    & button[aria-label="Избранное"] {
+      position: relative;
+
+      & span {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        width: 1.4rem;
+        height: 1.4rem;
+        border-radius: 100%;
+        font-size: .8rem;
+        font-weight: 500;
+        line-height: .8rem;
+        color: rgba(255, 255, 255, 1);
+        letter-spacing: -.08em;
+        background-color: rgba(33, 36, 46, 1);
+      }
+    }
   }
 
   &__btnLike {
@@ -122,6 +146,7 @@
     text-align: start;
     letter-spacing: .04em;
     text-transform: uppercase;
+    transition: color .3s ease-in-out;
 
     &_active {
       color: #d0bc7a;
@@ -164,17 +189,20 @@
         & input {
           width: min(42.5vw, 544px);
           padding: min(1.2vw, 15px);
+          border-radius: .4rem;
           font-size: 1.6rem;
           font-weight: 400;
           line-height: 2.4rem;
           color: rgba(33, 36, 46, 1);
           background-color: rgba(247, 247, 247, 1);
+          transition: color .3s ease-in-out;
 
           &::placeholder {
             font-size: 1.6rem;
             font-weight: 400;
             line-height: 2.4rem;
-            color: rgba(33, 36, 46, 1);
+            color: rgba(33, 36, 46, .4);
+            transition: color .3s ease-in-out;
           }
         }
       }
@@ -201,6 +229,7 @@
         line-height: 2.4rem;
         color: rgba(255, 255, 255, 1);
         background-color: rgba(33, 36, 46, 1);
+        transition: background-color .3s ease-in-out;
       }
     }
   }
@@ -237,16 +266,18 @@
     align-items: center;
     justify-content: flex-end;
     padding-right: min(8.1vw, 104px);
-    font-family: Roboto;
-    font-size: 1.6rem;
-    font-weight: 500;
-    line-height: 2.4rem;
-    color: rgba(33, 36, 46, 1);
+    cursor: default;
 
     grid-column: 2/3;
     grid-row: 1/2;
 
     & span {
+      font-size: 1.6rem;
+      font-weight: 500;
+      line-height: 2.4rem;
+      color: rgba(33, 36, 46, 1);
+      cursor: pointer;
+      transition: color .3s ease-in-out;
       transform: translateY(.7rem);
 
       &::after {
@@ -259,6 +290,7 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
+        transition: background-image .3s ease-in-out;
         transform: translateY(.4rem);
       }
     }
@@ -325,6 +357,7 @@
     right: min(1.9vw, 24px);
     width: min(1.9vw, 24px);
     height: min(1.9vw, 24px);
+    transition: fill .3s ease-in-out;
 
     fill: #e4e4e4;
 
@@ -359,6 +392,7 @@
       font-style: italic;
       line-height: min(1.4vw, 18px);
       color: rgba(33, 36, 46, 1);
+      transition: color .3s ease-in-out;
     }
   }
 
@@ -409,4 +443,55 @@
   .trend__slide:hover {
     border: 1px solid rgba(33, 36, 46, .4);
   }
+
+  .trend__slide:hover h4 {
+    color: rgba(208, 188, 122, 1);
+  }
+
+  .header__logoBlock:hover {
+    background-image: url(../img/logo_hover.png);
+  }
+
+  .header__tel:hover {
+    color: rgba(33, 36, 46, 1);
+  }
+
+  .header__tel:hover::after {
+    background-image: url(../img/header__tel_hover.svg);
+  }
+
+  .trend__more span:hover {
+    color: rgba(208, 188, 122, 1);
+  }
+
+  .trend__more span:hover::after {
+    background-image: url(../img/more_arrow_hover.svg);
+  }
+
+  .trend__like:hover {
+    fill: rgba(33, 36, 46, .4);
+  }
+
+  .profile__main div:has(button) > button:hover {
+    background-color: rgba(208, 188, 122, 1);
+  }
+
+  .profile__main div:has(input) span input:hover::placeholder {
+    color: rgba(33, 36, 46, 1);
+  }
 }
+
+.trend__like:active {
+  fill: rgba(208, 188, 122, 1);
+}
+
+.profile__main div:has(button) > button:active {
+  background-color: rgba(208, 188, 122, .5);
+}
+
+.profile__main div:has(input) span input:focus {
+  color: rgba(33, 36, 46, 1);
+  outline: 1px solid rgba(0, 0, 0, 1);
+}
+
+
