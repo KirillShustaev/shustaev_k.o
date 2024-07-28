@@ -1168,6 +1168,7 @@ button.swiper-pagination-bullet {
   border-bottom: 1px solid rgb(228, 228, 228);
 }
 .header__container {
+  position: relative;
   align-items: center;
   justify-content: space-between;
   padding: min(1.3vw, 16px) min(3vw, 38px) min(1vw, 13px) min(2.5vw, 32px);
@@ -1245,13 +1246,12 @@ button.swiper-pagination-bullet {
   transition: fill 0.3s ease-in-out;
   fill: #d0bc7a;
 }
-
-.burger {
+.header__burgerBtn {
   position: relative;
   width: 2rem;
   height: 0.75rem;
 }
-.burger::after, .burger::before {
+.header__burgerBtn::after, .header__burgerBtn::before {
   content: "";
   position: absolute;
   left: 0;
@@ -1259,10 +1259,10 @@ button.swiper-pagination-bullet {
   height: 0.15rem;
   background-color: black;
 }
-.burger::after {
+.header__burgerBtn::after {
   top: 0;
 }
-.burger::before {
+.header__burgerBtn::before {
   bottom: 0;
 }
 
@@ -1422,15 +1422,20 @@ button.swiper-pagination-bullet {
 .trend__slider {
   max-width: min(86.9vw, 1112px);
 }
-.trend__slide:nth-child(odd) {
+.trend__slide:nth-child(odd) .trend__descrBlock::after {
   background-color: rgb(192, 141, 116);
 }
-.trend__slide:nth-child(even) {
+.trend__slide:nth-child(even) .trend__descrBlock::after {
   background-color: rgb(234, 151, 111);
 }
 .trend__slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
   border: 1px solid rgb(255, 255, 255);
   border-radius: min(0.7vw, 9px);
+  background-color: rgb(247, 247, 247);
   cursor: pointer;
   transition: border 0.3s ease-in-out;
 }
@@ -1457,6 +1462,7 @@ button.swiper-pagination-bullet {
   position: absolute;
   top: min(1.9vw, 24px);
   left: min(1.8vw, 23px);
+  max-width: 17rem;
   padding: min(0.3vw, 4px) min(0.9vw, 12px);
   border-radius: min(7.8vw, 100px);
   font-size: min(1.1vw, 14px);
@@ -1480,16 +1486,25 @@ button.swiper-pagination-bullet {
   fill: inherit;
 }
 .trend__descrBlock {
+  position: relative;
   flex-direction: column;
-  justify-content: space-between;
-  padding: min(1.9vw, 24px);
+  padding: min(1.9vw, 24px) min(1.9vw, 24px) 0 min(1.9vw, 24px);
   border-radius: 0 0 min(0.6vw, 8px) min(0.6vw, 8px);
   background-color: rgb(247, 247, 247);
   row-gap: min(1.3vw, 16px);
 }
+.trend__descrBlock::after {
+  content: "";
+  position: absolute;
+  top: -1.3rem;
+  left: 0;
+  width: 100%;
+  height: 1.2rem;
+}
 .trend__descrBlock div {
   display: flex;
   flex-direction: column;
+  margin-bottom: 1.6rem;
   row-gap: min(0.6vw, 8px);
 }
 .trend__descrBlock h4 {
@@ -1509,6 +1524,8 @@ button.swiper-pagination-bullet {
   text-align: left;
 }
 .trend__price {
+  margin-top: auto;
+  padding: 0 min(1.9vw, 24px) min(1.9vw, 24px) min(1.9vw, 24px);
   font-family: "TimesNewRoman";
   font-size: min(1.4vw, 18px);
   font-weight: 700;
@@ -1523,6 +1540,91 @@ button.swiper-pagination-bullet {
   text-decoration: line-through;
 }
 
+.burger {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  width: 100%;
+  max-width: 1920px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 1.6rem 3.2rem;
+  background-color: rgb(255, 255, 255);
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-500%);
+}
+.burger__logoBlock {
+  width: 9.1rem;
+  height: 3.2rem;
+  background-image: url(../img/logo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: background-image 0.3s ease-in-out;
+}
+.burger button {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+.burger__cross {
+  width: 100%;
+  height: 100%;
+  transition: fill 0.3s ease-in-out;
+  fill: #21242e;
+}
+.burger__top {
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 22rem;
+}
+.burger__top div:has(picture) {
+  width: 9.1rem;
+  height: 3.2rem;
+}
+.burger__top div:has(picture) img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.burger__top + div {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 4.8rem;
+}
+.burger__top + div h4 {
+  font-size: 2.4rem;
+  font-weight: 500;
+  line-height: 2.4rem;
+  color: rgb(33, 36, 46);
+}
+.burger__list {
+  width: 50%;
+}
+.burger__list:nth-child(2) {
+  margin-right: 1rem;
+}
+.burger__listProd {
+  flex-direction: column;
+  max-width: 25rem;
+  row-gap: 1.6rem;
+}
+.burger__listProd a {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.4rem;
+  color: rgba(33, 36, 46, 0.8);
+  transition: color 0.3s ease-in-out;
+}
+.burger h4 {
+  margin-bottom: 2.4rem;
+  font-size: 2.4rem;
+  font-weight: 500;
+  line-height: 2.4rem;
+  color: rgb(33, 36, 46);
+}
+
 @media (any-hover: hover) {
   .header__btnBlock button:hover .header__btnLike {
     stroke: rgb(33, 36, 46);
@@ -1530,11 +1632,11 @@ button.swiper-pagination-bullet {
   .header__btnBlock button:hover .header__btnAcc {
     fill: rgb(33, 36, 46);
   }
-  .burger:hover {
+  .header__burgerBtn:hover {
     height: 1.15rem;
   }
-  .burger:hover::after,
-  .burger:hover::before {
+  .header__burgerBtn:hover::after,
+  .header__burgerBtn:hover::before {
     background-color: #d0bc7a;
   }
   .trend__slide:hover {
@@ -1543,7 +1645,8 @@ button.swiper-pagination-bullet {
   .trend__slide:hover h4 {
     color: rgb(208, 188, 122);
   }
-  .header__logoBlock:hover {
+  .header__logoBlock:hover,
+  .burger__logoBlock:hover {
     background-image: url(../img/logo_hover.png);
   }
   .header__tel:hover {
@@ -1570,6 +1673,15 @@ button.swiper-pagination-bullet {
   .profile__main div:has(input) span input:hover::placeholder {
     color: rgb(33, 36, 46);
   }
+  .profile__menuBtn:hover {
+    color: #d0bc7a;
+  }
+  .burger__close:hover .burger__cross {
+    fill: #d0bc7a;
+  }
+  .burger__link:hover {
+    color: #d0bc7a;
+  }
 }
 .trend__like:active {
   fill: rgb(208, 188, 122);
@@ -1582,4 +1694,12 @@ button.swiper-pagination-bullet {
 .profile__main div:has(input) span input:focus {
   color: rgb(33, 36, 46);
   outline: 1px solid rgb(0, 0, 0);
+}
+
+.transBurger {
+  transform: translateX(0);
+}
+
+.stop-scroll {
+  overflow: hidden;
 }/*# sourceMappingURL=main.css.map */

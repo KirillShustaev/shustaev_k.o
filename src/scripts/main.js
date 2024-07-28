@@ -1,3 +1,27 @@
+// бургер
+let burgerOpen = document.querySelector(".header__burgerBtn")
+let burgerClose = document.querySelector(".burger__close")
+let burgerLink = document.querySelectorAll(".burger__link")
+let burgerBlock = document.querySelector(".burger")
+
+burgerOpen.addEventListener("click", () => {
+	burgerBlock.classList.add("transBurger")
+	document.body.classList.add("stop-scroll");
+})
+
+burgerClose.addEventListener("click", () => {
+	burgerBlock.classList.remove("transBurger")
+	document.body.classList.remove("stop-scroll");
+})
+
+burgerLink.forEach((e) => {
+	e.addEventListener("click",() => {
+		burgerBlock.classList.remove("transBurger");
+		document.body.classList.remove("stop-scroll");
+	})
+})
+
+// счетчик
 const counterElement = document.querySelector('.header__counter');
 const incrementButtons = document.querySelectorAll('.trend__like'); 
 
@@ -15,6 +39,7 @@ incrementButtons.forEach(button => {
     });
 });
 
+// меню
 let menu = document.querySelectorAll(".profile__menuBtn")
 
 menu.forEach(e => {
@@ -26,11 +51,13 @@ menu.forEach(e => {
 	})
 }) 
 
+// маска тлф
 let phoneInput = document.getElementById('phone');
 let phoneMask = IMask(phoneInput, {
 	mask: '+{7}(000)000-00-00'
 });
 
+// слайдер
 let swiper = new Swiper('.trend__slider', {
 	slidesPerGroup: 1,
     slidesPerView: 4,
