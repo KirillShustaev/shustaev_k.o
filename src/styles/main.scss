@@ -242,7 +242,7 @@
   }
 
   &__mainBlock {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.5fr 1fr;
     grid-template-rows: repeat(2, max-content);
     row-gap: min(3.8vw, 48px);
   }

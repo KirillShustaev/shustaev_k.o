@@ -60,9 +60,17 @@ let phoneMask = IMask(phoneInput, {
 // слайдер
 let swiper = new Swiper('.trend__slider', {
 	slidesPerGroup: 1,
-    slidesPerView: 4,
-	spaceBetween: 32,
 	loop: true,
-  })
+	breakpoints: {
+		1: {
+			slidesPerView: 1,
+			spaceBetween: 6,
+		},
+		767: {
+			slidesPerView: 4,
+			spaceBetween: 32,
+		}
+	}
+})
 
 

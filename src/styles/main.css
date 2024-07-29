@@ -346,7 +346,7 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  min-width: 360px;
+  min-width: 375px;
   min-height: 100vh;
   font-family: "Roboto", "TimesNewRoman", sans-serif;
 }
@@ -1372,7 +1372,7 @@ button.swiper-pagination-bullet {
   padding: min(8.8vw, 112px) 0 min(8.8vw, 112px) min(6.3vw, 80px);
 }
 .trend__mainBlock {
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
   grid-template-rows: repeat(2, max-content);
   row-gap: min(3.8vw, 48px);
 }
